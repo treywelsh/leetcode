@@ -3,15 +3,16 @@
 import sys
 
 #a better algorithm exist
+#O(n^3) in time
+#O(n^2) in space
 def four_sum(nums, target):
     solutions = []
     two_sum = {}
     if len(nums) < 4:
         return []
     #calcul all the 2sums in hash, indexed by sum and containing indexes
-    #O(n^2) in time
     for i in xrange(0, len(nums)):
-        for j in xrange(i + 1, len(nums)):
+        for j in xrange(i + 1, len(nums)): #O(n^2) elements in two_sum
             res = nums[i] + nums[j]
             if res in two_sum:
                two_sum[res].append((i, j))
@@ -20,7 +21,6 @@ def four_sum(nums, target):
     #looking for target
     keys = two_sum.keys()
     keys.sort()
-    #O(n^3) in time O(n^2) in space
     for i in xrange(0, len(keys)):
         ki = keys[i]
         if ki > 0:
