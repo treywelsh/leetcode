@@ -1,11 +1,11 @@
-#include <stdio.h>
-
 /* https://leetcode.com/problems/single-number
  *
  * O(n) in time
  * O(1) in space
  *
  */
+
+#include <stdio.h>
 
 int singleNumber(int* nums, int numsSize) {
     int i;
